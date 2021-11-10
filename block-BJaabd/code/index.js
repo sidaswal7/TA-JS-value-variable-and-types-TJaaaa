@@ -181,4 +181,22 @@ if(product>0){
     * [ ] Div
 */
 
-// [Your code goes here]
+let fnum = +prompt("Enter first number");
+let snum = +prompt("Enter second number");
+let operation = prompt("Enter the operation");
+switch(operation){
+  case ("Add"):
+    alert("Sum is:"+ " "+ (fnum + snum));
+    break;
+  case ("Sub"):
+    alert("Subtraction is:"+ " "+ (fnum - snum));
+    break;  
+  case ("Mul"):
+    alert("Product is:"+ " "+ (fnum * snum));
+    break;   
+  case ("Div"):
+    alert("Division is:"+ " "+ (fnum/snum));
+    break;   
+  default:
+    alert("Invalid Input");  
+}
