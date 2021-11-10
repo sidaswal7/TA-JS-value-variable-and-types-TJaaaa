@@ -38,7 +38,15 @@ while(a >= 0){
     a= a-1;
 }
 // 6. Concat all the even numbers from 10 to 0 (both inclusive) in descending order using a while loop. (1086420)
-
+let finalEvenString = "";
+let initialEvenValue = 10;
+while (initialEvenValue >=0){
+    if(initialEvenValue%2 == 0){
+        finalEvenString = finalEvenString + initialEvenValue;
+    }
+    initialEvenValue --;
+}
+console.log(finalEvenString)
 // Comparisoin
 
 /* 7. Take two value using prompt and store them in variables `num1` and `num2`. Check whether they are equal or not.
@@ -53,14 +61,10 @@ Example:
 "hello", -21; // false
 
 */
-let num1 = prompt("Enter first value");
-let num2 = prompt("Enter second value");
-if (Boolean(num1)&&Boolean(num2)== true){
-    if (num1 == num2){
-        alert("The values entered are equal");
-    } else{
-        alert("The values entered are not equal");
-    }
-}else if(Boolean(num1)||Boolean(num2)== false){
-    alert("Enter a valid value");
+let num1 = +prompt("Enter first value");
+let num2 = +prompt("Enter second value");
+if(isNaN(num1) || isNaN(num2)){
+    alert(`Enter a valid value`);
+}else {
+    alert(num1 === num2);
 }
