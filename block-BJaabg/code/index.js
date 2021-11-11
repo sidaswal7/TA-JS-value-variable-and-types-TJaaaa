@@ -13,18 +13,17 @@ const ACCESSORY_PRICE = 9.99;
 
 var bank_balance = 303.91;
 var amount = 0;
-var temp = 0;
-var tempBalance = bank_balance
-while(bank_balance>ACCESSORY_PRICE){
-    amount = amount+ PHONE_PRICE;
-    temp = SPENDING_THRESHOLD - PHONE_PRICE;
-    accessoryNum = temp / ACCESSORY_PRICE;
-    amount += ACCESSORY_PRICE *accessoryNum;
-    bank_balance -= amount;
+while(amount<bank_balance){
+    amount += PHONE_PRICE;
+    if(amount<SPENDING_THRESHOLD
+        ){
+            amount += ACCESSORY_PRICE;
+        }
 }
-amount = amount + amount*TAX_RATE;
-console.log(amount);
-if(amount<tempBalance){
+let tax = amount * TAX_RATE;
+let totalAmount = amount + tax;
+console.log(`$${totalAmount}`);
+if(totalAmount<bank_balance){
     alert("You can afford it");
 } else{
     alert("You cannot afford it");
